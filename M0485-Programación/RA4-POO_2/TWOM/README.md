@@ -1,4 +1,3 @@
-
 # README: This War Of Mine - Proyecto de Simulación
 
 ## Descripción
