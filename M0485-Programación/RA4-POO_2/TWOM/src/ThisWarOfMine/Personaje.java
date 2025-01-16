@@ -32,6 +32,10 @@ public class Personaje {
         return this.nombre;
     }
     
+    public String getHabilidad(){
+        return this.habilidad;
+    }
+    
     public int getSalud(){
         return this.salud;
     }
