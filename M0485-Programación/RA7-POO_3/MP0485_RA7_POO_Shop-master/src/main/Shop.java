@@ -223,6 +223,7 @@ public class Shop {
             }
         }
 
+        
         // show cost total
         totalAmount = totalAmount * TAX_RATE;
         cash.setValue(cash.getValue()+totalAmount);
