@@ -35,7 +35,12 @@ public class Client extends Person implements Payable{
     @Override
     public boolean pay(Amount amount) {
         //If our balance substracted by the amount of money is more than 0 it means that we are able to pay
-        return (this.balance.getValue() - amount.getValue() > 0); 
+        if (this.balance.getValue() - amount.getValue() > 0){
+            this.balance.setValue(this.balance.getValue() - amount.getValue());
+            return true;
+        } else {
+            return false;
+        }
         
     }
 }

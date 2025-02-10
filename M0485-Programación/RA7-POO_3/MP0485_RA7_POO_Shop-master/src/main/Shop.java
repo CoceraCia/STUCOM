@@ -67,8 +67,7 @@ public class Shop {
     public static boolean initSession(Logable user){
         Scanner sc = new Scanner(System.in);
         System.out.print("Employee ID: ");
-        int id = sc.nextInt();
-        sc.nextLine();
+        String id = sc.nextLine();
         System.out.print("Password: ");
         String password = sc.nextLine();
         return user.login(id, password);
@@ -231,6 +230,8 @@ public class Shop {
         sales.add(new Sale(client, productos, new Amount(totalAmount)));
         if(!client.pay(new Amount(totalAmount))){
             System.out.println("Cliente debe: "+(client.getBalance().getValue() - totalAmount));
+        } else {
+            System.out.println("Producto pagado, balance actual ->: "+(client.getBalance().getValue() - totalAmount));
         }
     }
 
@@ -241,7 +242,11 @@ public class Shop {
         System.out.println("Lista de ventas:");
         if (sales != null) {
             for (Sale sale : sales) {
-                System.out.println(sale);
+                System.out.println("-------- Client "+ sale.getClient().getName()+"-------");
+                for (int i = 0; i < sale.getProducts().size(); i++){
+                    System.out.println("\t"+i+"- Product "+ sale.getProducts().get(i).getName());
+                }
+                System.out.println("\t- Total amount "+ sale.getAmount().showAmount());
             }
         }
     }

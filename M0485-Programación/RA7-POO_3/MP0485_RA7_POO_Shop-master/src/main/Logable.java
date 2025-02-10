@@ -9,5 +9,5 @@ package main;
  * @author migue
  */
 public interface Logable {
-    boolean login (int user, String password);
+    boolean login (String user, String password);
 }

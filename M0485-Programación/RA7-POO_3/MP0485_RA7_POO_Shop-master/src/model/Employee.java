@@ -11,12 +11,12 @@ import main.Logable;
  * @author migue
  */
 public class Employee extends Person implements Logable {
-    private int employeeid;
+    private String employeeid;
     private String password;
     
     
     //constantes fijas
-    private final int EMPLOYEE_ID = 123;
+    private final String EMPLOYEE_ID = "123";
     private final String PASSWORD = "test";
     
     public Employee(String name){
@@ -25,7 +25,7 @@ public class Employee extends Person implements Logable {
         this.password = this.PASSWORD;
     }
     
-    public int getId(){
+    public String getId(){
         return this.employeeid;
     }
     
@@ -34,7 +34,7 @@ public class Employee extends Person implements Logable {
     }
     
     @Override   //Implemented from Logable
-    public boolean login(int id, String password){
-        return (this.employeeid == id && this.password.equals(password));
+    public boolean login(String id, String password){
+        return (this.employeeid.equals(id) && this.password.equals(password));
     }
 }
