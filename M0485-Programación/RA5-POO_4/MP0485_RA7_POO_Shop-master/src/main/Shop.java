@@ -14,6 +14,12 @@ public class Shop {
 
     final static double TAX_RATE = 1.04;
 
+    public ArrayList<Product> getInventory() {
+        return inventory;
+    }
+    
+    
+
     public Shop() {
         inventory = new ArrayList<>();
         sales = new ArrayList<>();
